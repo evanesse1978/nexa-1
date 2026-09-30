@@ -553,7 +553,7 @@
     <div id="app-container" class="hidden flex-1 flex overflow-hidden h-full w-full fade-in z-10">
         
         <!-- SIDEBAR -->
-        <aside class="w-72 bg-deep flex-shrink-0 flex flex-col border-r border-slate-800/50 p-4">
+        <aside class="w-72 bg-deep flex-shrink-0 flex flex-col border-r border-slate-800/50 p-4 overflow-y-auto">
             <div class="bg-gradient-to-br from-slate-800/80 to-surface border border-slate-700/80 rounded-2xl p-5 mb-8 shadow-xl shadow-accent/10 text-white relative overflow-hidden group cursor-default">
                 <!-- Effetti di luce di sfondo -->
                 <div class="absolute -top-10 -left-10 w-32 h-32 bg-accent/20 blur-3xl rounded-full group-hover:bg-accent/30 transition-all duration-500"></div>
@@ -575,15 +575,31 @@
 
             <div class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 px-2">Navigazione</div>
             <nav class="flex-1 space-y-3">
-                <a href="#" onclick="switchSection('home')" id="nav-home" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group nav-active"><i class="fa-solid fa-house w-5 text-center"></i> <span class="font-medium">Home Dashboard</span></a>
-                <a href="#" onclick="switchSection('agenda')" id="nav-agenda" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group"><i class="fa-regular fa-calendar-check w-5 text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Agenda & Calendario</span></a>
-                <a href="#" onclick="switchSection('quotes')" id="nav-quotes" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group"><i class="fa-solid fa-calculator w-5 text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Preventivi</span></a>
-                <a href="#" onclick="switchSection('clients')" id="nav-clients" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group"><i class="fa-solid fa-users w-5 text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Anagrafica clienti</span></a>
-                <a href="#" onclick="switchSection('contracts'); resetContractFilter(); renderContractsDefault();" id="nav-contracts" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group"><i class="fa-solid fa-file-contract w-5 text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Contratti / Polizze</span></a>
-                <a href="#" onclick="switchSection('claims'); renderClaims();" id="nav-claims" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group"><i class="fa-solid fa-triangle-exclamation w-5 text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Sinistri</span></a>
-                <a href="#" onclick="switchSection('deadlines')" id="nav-deadlines" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group"><i class="fa-solid fa-calendar-days w-5 text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Scadenze titoli</span></a>
-                <a href="#" onclick="switchSection('report')" id="nav-report" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group"><i class="fa-solid fa-chart-pie w-5 text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Report</span></a>
-            </nav>
+    <a href="#" onclick="switchSection('home')" id="nav-home" class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group nav-active">
+        <i class="fa-solid fa-house w-7 text-xl text-center"></i> <span class="font-medium">Home Dashboard</span>
+    </a>
+    <a href="#" onclick="switchSection('agenda')" id="nav-agenda" class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group">
+        <i class="fa-regular fa-calendar-check w-7 text-xl text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Agenda & Calendario</span>
+    </a>
+    <a href="#" onclick="switchSection('quotes')" id="nav-quotes" class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group">
+        <i class="fa-solid fa-calculator w-7 text-xl text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Preventivi</span>
+    </a>
+    <a href="#" onclick="switchSection('clients')" id="nav-clients" class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group">
+        <i class="fa-solid fa-users w-7 text-xl text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Anagrafica clienti</span>
+    </a>
+    <a href="#" onclick="switchSection('contracts'); resetContractFilter(); renderContractsDefault();" id="nav-contracts" class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group">
+        <i class="fa-solid fa-file-contract w-7 text-xl text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Contratti / Polizze</span>
+    </a>
+    <a href="#" onclick="switchSection('claims'); renderClaims();" id="nav-claims" class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group">
+        <i class="fa-solid fa-triangle-exclamation w-7 text-xl text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Sinistri</span>
+    </a>
+    <a href="#" onclick="switchSection('deadlines')" id="nav-deadlines" class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group">
+        <i class="fa-solid fa-calendar-days w-7 text-xl text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Scadenze titoli</span>
+    </a>
+    <a href="#" onclick="switchSection('report')" id="nav-report" class="flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 hover:bg-slate-800/50 hover:text-white group">
+        <i class="fa-solid fa-chart-pie w-7 text-xl text-center group-hover:text-accent transition-colors"></i> <span class="font-medium">Report</span>
+    </a>
+</nav>
 
             <div class="mt-auto pt-4 border-t border-slate-800">
                 <p class="text-[10px] text-slate-500 uppercase tracking-widest mb-2 px-2">Area Dati</p>
@@ -619,12 +635,12 @@
                 
                 <!-- DASHBOARD -->
                 <div id="section-home" class="fade-in space-y-6">
-                   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="glass-effect p-5 rounded-2xl border-l-4 border-accent relative overflow-hidden"><i class="fa-solid fa-users absolute right-4 top-4 text-6xl text-accent opacity-30"></i><p class="text-xs font-bold text-slate-500 uppercase">I Tuoi Clienti</p><h3 class="text-3xl font-bold text-white mt-1" id="dash-total-clients">0</h3></div>
-                        <div class="glass-effect p-5 rounded-2xl border-l-4 border-warning relative overflow-hidden"><i class="fa-solid fa-file-contract absolute right-4 top-4 text-6xl text-warning opacity-30"></i><p class="text-xs font-bold text-slate-500 uppercase">Polizze Attive</p><h3 class="text-3xl font-bold text-white mt-1" id="dash-total-policies">0</h3></div>
-                        <div class="glass-effect p-5 rounded-2xl border-l-4 border-danger relative overflow-hidden"><i class="fa-solid fa-circle-exclamation absolute right-4 top-4 text-6xl text-danger opacity-30"></i><p class="text-xs font-bold text-slate-500 uppercase">Da Incassare del mese</p><h3 class="text-3xl font-bold text-white mt-1" id="dash-pending-money">€ 0</h3></div>
-                        <div class="glass-effect p-5 rounded-2xl border-l-4 border-success relative overflow-hidden"><i class="fa-solid fa-chart-line absolute right-4 top-4 text-6xl text-success opacity-30"></i><p class="text-xs font-bold text-slate-500 uppercase">Incassato (Mese)</p><h3 class="text-3xl font-bold text-white mt-1" id="dash-month-inc">€ 0</h3></div>
-                    </div>
+                   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="glass-effect p-5 rounded-2xl border-l-4 border-accent relative overflow-hidden"><i class="fa-solid fa-users absolute right-4 top-4 text-6xl text-accent opacity-30"></i><p class="text-xs font-bold text-slate-500 uppercase">I Tuoi Clienti</p><h3 class="text-3xl font-bold text-white mt-1 truncate" id="dash-total-clients">0</h3></div>
+    <div class="glass-effect p-5 rounded-2xl border-l-4 border-warning relative overflow-hidden"><i class="fa-solid fa-file-contract absolute right-4 top-4 text-6xl text-warning opacity-30"></i><p class="text-xs font-bold text-slate-500 uppercase">Polizze Attive</p><h3 class="text-3xl font-bold text-white mt-1 truncate" id="dash-total-policies">0</h3></div>
+    <div class="glass-effect p-5 rounded-2xl border-l-4 border-danger relative overflow-hidden"><i class="fa-solid fa-circle-exclamation absolute right-4 top-4 text-6xl text-danger opacity-30"></i><p class="text-xs font-bold text-slate-500 uppercase">Da Incassare del mese</p><h3 class="text-3xl font-bold text-white mt-1 truncate" id="dash-pending-money">€ 0</h3></div>
+    <div class="glass-effect p-5 rounded-2xl border-l-4 border-success relative overflow-hidden"><i class="fa-solid fa-chart-line absolute right-4 top-4 text-6xl text-success opacity-30"></i><p class="text-xs font-bold text-slate-500 uppercase">Incassato (Mese)</p><h3 class="text-3xl font-bold text-white mt-1 truncate" id="dash-month-inc">€ 0</h3></div>
+</div>
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                         <div class="glass-effect rounded-2xl p-6 relative overflow-hidden flex flex-col h-[400px]">
                             <div class="flex justify-between items-center mb-4">
@@ -1973,7 +1989,7 @@ function sendBirthdayWishes(name, phone, email, channel) {
             document.getElementById('dash-total-clients').innerText = clients.length;
 
             // Polizze attive: conteggio univoco per (cliente + numero polizza)
-            const active = policies.filter(p => p.status === 'ATTIVA');
+            const active = policies.filter(p => p.status === 'ATTIVA' || p.status === 'SOSPESA');
             const uniqKeys = new Set(active.map(p => `${p.clientId}|${String(p.policyNumber || '').toUpperCase().trim()}`));
             document.getElementById('dash-total-policies').innerText = uniqKeys.size;
 
@@ -2006,16 +2022,17 @@ function sendBirthdayWishes(name, phone, email, channel) {
             const upcoming = appointments
                 .filter(a => new Date(a.date) >= new Date(new Date().setHours(0,0,0,0)))
                 .sort((a,b) => new Date(a.date + 'T' + (a.time||'00:00')) - new Date(b.date + 'T' + (b.time||'00:00')))
-                .slice(0,3);
+                .slice(0, 6); // AUMENTATO DA 3 a 6. Puoi cambiare questo numero a tuo piacimento.
 
             if(upcoming.length === 0) {
                 l.innerHTML = '<p class="text-slate-500 text-xs text-center mt-10">Nessun appuntamento imminente.</p>';
             } else {
                 upcoming.forEach(a => {
+                    // AGGIUNTO "min-w-0" per bloccare lo strabordamento e "title" per leggere il testo passando il mouse
                     l.innerHTML += `<div class="flex items-center justify-between p-2 rounded border bg-slate-800/30 border-slate-700">
-                        <div class="flex-1">
+                        <div class="flex-1 min-w-0">
                             <div class="text-xs text-accent font-bold">${new Date(a.date).toLocaleDateString()} ${a.time||''}</div>
-                            <div class="text-sm text-white font-medium truncate">${a.title}</div>
+                            <div class="text-sm text-white font-medium truncate" title="${a.title}">${a.title}</div>
                         </div>
                     </div>`;
                 });
@@ -2782,53 +2799,79 @@ function sendBirthdayWishes(name, phone, email, channel) {
         // Matitina provvigioni (solo rinnovi): modifica provvigione personale (commPers)
         
 function editTitle(pid, tid){
-    const p = policies.find(x => String(x.id) === String(pid));
-    if(!p) return alert('Polizza non trovata');
+            const p = policies.find(x => String(x.id) === String(pid));
+            if(!p) return alert('Polizza non trovata');
 
-    const t = (p.titles || []).find(x => String(x.id) === String(tid));
-    if(!t) return alert('Titolo non trovato');
+            const t = (p.titles || []).find(x => String(x.id) === String(tid));
+            if(!t) return alert('Titolo non trovato');
 
-    const curr = Number(t.amount || 0).toFixed(2);
-    const val = prompt('Inserisci premio del titolo (€):', curr);
-    if(val === null) return;
+            const curr = Number(t.amount || 0).toFixed(2);
+            const val = prompt('Inserisci premio del titolo (€):', curr);
+            if(val === null) return;
 
-    const newAmt = safeParseFloat(val);
-    if(isNaN(newAmt)) return alert('Valore non valido');
+            const newAmt = safeParseFloat(val);
+            if(isNaN(newAmt)) return alert('Valore non valido');
 
-    t.amount = newAmt;
+            t.amount = newAmt;
 
-    // --- AUTOMATISMO SDD MENSILE (Split 12) ---
-    // Se la polizza è mensile, copia il nuovo importo sulle altre rate dello stesso anno
-    if(Number(p.split) === 12 && t.dueDate){
-        const y = String(t.dueDate).slice(0,4);
-        (p.titles || []).forEach(tt => {
-            if(tt === t) return;
-            
-            // Trova le altre rate dello stesso anno e aggiorna l'importo
-            if(String(tt.dueDate || '').slice(0,4) === y){
-                tt.amount = newAmt;
-                // Azzera le provvigioni sulle rate successive alla prima
-                if(Number(tt.n) !== 1){
-                    tt.commTotal = 0;
-                    tt.commPers = 0;
-                }
+            // --- AUTOMATISMO SDD MENSILE (Split 12) ---
+            if(Number(p.split) === 12 && t.dueDate){
+                const targetCycle = Math.floor((Number(t.n) - 1) / 12);
+                
+                (p.titles || []).forEach(tt => {
+                    if(tt === t) return;
+                    const ttCycle = Math.floor((Number(tt.n) - 1) / 12);
+                    
+                    if(!isNaN(targetCycle) && ttCycle === targetCycle){
+                        tt.amount = newAmt;
+                        if((Number(tt.n) - 1) % 12 !== 0){
+                            tt.commTotal = 0;
+                            tt.commPers = 0;
+                        }
+                    }
+                });
+                p.annualPremium = parseFloat((newAmt * 12).toFixed(2));
+            } else {
+                if(Number(p.annualPremium || 0) === 0) p.annualPremium = newAmt;
             }
-        });
-        
-        // Aggiorna anche il premio annuo totale (moltiplicato per 12)
-        p.annualPremium = parseFloat((newAmt * 12).toFixed(2));
-    } else {
-        // Se non è mensile e il premio annuo era 0, lo imposta uguale alla rata
-        if(Number(p.annualPremium || 0) === 0) p.annualPremium = newAmt;
-    }
 
-    saveAllData();
-    renderDeadlines();
-    updateDashboard();
-    if(currentViewingPolicyId == p.id) openPolicyTitles(p.id);
-}
-        function editRenewalCommissionTotal(pid, tid){const p=policies.find(x=>String(x.id)==String(pid));if(!p)return alert('Polizza non trovata');const t=p.titles.find(x=>String(x.id)==String(tid));if(!t||t.isRenewal!==true)return alert('Funzione disponibile solo sui rinnovi.');const curr=Number(t.commTotal||0).toFixed(2);const val=prompt('Inserisci provvigione totale (rinnovo)',curr);if(val===null)return;const newTot=safeParseFloat(val);if(isNaN(newTot))return alert('Valore non valido');t.commTotal=newTot;const perc=safeParseFloat(p.commPerc||0);t.commPers=parseFloat((newTot*perc/100).toFixed(2));saveAllData();renderDeadlines();updateDashboard();if(currentViewingPolicyId==p.id)openPolicyTitles(p.id);}
-function editRenewalCommission(pid, tid) {
+            // Forza il sync immediato su Firebase per evitare la sovrascrittura di altre rate
+            if (typeof fbSaveSingleDoc === 'function') fbSaveSingleDoc('policies', p);
+            if (typeof saveLocalBackup === 'function') saveLocalBackup();
+
+            saveAllData();
+            renderDeadlines();
+            updateDashboard();
+            if(currentViewingPolicyId == p.id) openPolicyTitles(p.id);
+        }
+
+        function editRenewalCommissionTotal(pid, tid){
+            const p = policies.find(x => String(x.id) == String(pid));
+            if(!p) return alert('Polizza non trovata');
+            const t = p.titles.find(x => String(x.id) == String(tid));
+            if(!t || t.isRenewal !== true) return alert('Funzione disponibile solo sui rinnovi.');
+            
+            const curr = Number(t.commTotal || 0).toFixed(2);
+            const val = prompt('Inserisci provvigione totale (rinnovo)', curr);
+            if(val === null) return;
+            
+            const newTot = safeParseFloat(val);
+            if(isNaN(newTot)) return alert('Valore non valido');
+            
+            t.commTotal = newTot;
+            const perc = safeParseFloat(p.commPerc || 0);
+            t.commPers = parseFloat((newTot * perc / 100).toFixed(2));
+            
+            if (typeof fbSaveSingleDoc === 'function') fbSaveSingleDoc('policies', p);
+            if (typeof saveLocalBackup === 'function') saveLocalBackup();
+
+            saveAllData();
+            renderDeadlines();
+            updateDashboard();
+            if(currentViewingPolicyId == p.id) openPolicyTitles(p.id);
+        }
+
+        function editRenewalCommission(pid, tid) {
             const p = policies.find(x => x.id == pid);
             if(!p) return alert('Polizza non trovata');
             const t = (p.titles || []).find(x => x.id == tid);
@@ -2837,37 +2880,60 @@ function editRenewalCommission(pid, tid) {
             const curr = Number(t.commPers || 0).toFixed(2);
             const val = prompt('Inserisci provvigione (tua) per questo titolo (€):', curr);
             if(val === null) return;
+            
             const newPers = safeParseFloat(val);
             if(isNaN(newPers)) return alert('Valore non valido');
 
             t.commPers = newPers;
+
+            if (typeof fbSaveSingleDoc === 'function') fbSaveSingleDoc('policies', p);
+            if (typeof saveLocalBackup === 'function') saveLocalBackup();
 
             saveAllData();
             renderDeadlines();
             updateDashboard();
             if(currentViewingPolicyId === p.id) openPolicyTitles(p.id);
         }
+        
 
-        // Elimina titolo (rata)
+       // Elimina titolo (rata) - CORRETTO PER RIALINEAMENTO SCADENZA
         function deleteTitle(polId, titId) {
-    const p = policies.find(x => x.id === polId);
-    if(!p) return;
-    const t = (p.titles || []).find(x => x.id === titId);
-    if(!t) return;
-    if(!confirm('Eliminare il titolo (rata) ' + (t.n || '') + ' del ' + (new Date(t.dueDate).toLocaleDateString('it-IT')) + '?')) return;
+            const p = policies.find(x => x.id === polId);
+            if(!p) return;
+            const t = (p.titles || []).find(x => x.id === titId);
+            if(!t) return;
+            if(!confirm('Eliminare il titolo (rata) ' + (t.n || '') + ' del ' + (new Date(t.dueDate).toLocaleDateString('it-IT')) + '?')) return;
 
-    p.titles = (p.titles || []).filter(x => x.id !== titId);
-    p.titles.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
-    p.titles.forEach((x, i) => { x.n = i+1; });
+            p.titles = (p.titles || []).filter(x => x.id !== titId);
+            p.titles.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+            p.titles.forEach((x, i) => { 
+                // Evita di convertire in numero le diciture "STORNO" o personalizzate
+                if (/^\d+$/.test(String(x.n)) || x.n === 0 || x.n === undefined || x.n === '') {
+                    x.n = i+1; 
+                }
+            });
 
-    fbSaveSingleDoc('policies', p);
-    saveLocalBackup();
+            // FIX: Ricalcola e ripristina la data di scadenza (expiry) della polizza
+            let nextEff = new Date(p.effect);
+            if (p.titles.length > 0) {
+                const maxD = Math.max(...p.titles.map(title => new Date(title.dueDate).getTime()));
+                const maxTitleDate = new Date(maxD);
+                while (nextEff <= maxTitleDate) {
+                    nextEff.setFullYear(nextEff.getFullYear() + 1);
+                }
+            } else {
+                nextEff.setFullYear(nextEff.getFullYear() + 1);
+            }
+            p.expiry = nextEff.toISOString().split('T')[0];
 
-    renderDeadlines();
-    updateDashboard();
-    if(currentViewingPolicyId === polId) openPolicyTitles(polId);
-    renderPolicies(currentActiveClientId, true);
-}
+            if (typeof fbSaveSingleDoc === 'function') fbSaveSingleDoc('policies', p);
+            if (typeof saveLocalBackup === 'function') saveLocalBackup();
+
+            renderDeadlines();
+            updateDashboard();
+            if(currentViewingPolicyId === polId) openPolicyTitles(polId);
+            renderPolicies(currentActiveClientId, true);
+        }
 
         // Unisce eventuali polizze duplicate (stesso Cliente + Compagnia + Numero polizza)
         // Mantiene una polizza "principale" e accorpa i titoli, aggiornando la scadenza al massimo.
@@ -2999,45 +3065,59 @@ if(editingPolicyId){const idx=policies.findIndex(p=>p.id===editingPolicyId); pol
             }
         }
 
-        // GENERATORE DI RINNOVI MASSIVO - CORRETTO
+        // GENERATORE DI RINNOVI MASSIVO - CORRETTO CON DATE ESATTE
         function generateBulkRenewals() {
             const targetInput = document.getElementById('bulkRenewalInput').value;
             if(!targetInput) return alert("Seleziona mese e anno target.");
 
             const [tYear, tMonth] = targetInput.split('-');
-            
-            // CORREZIONE: Usiamo l'anno selezionato, senza sottrarre 1.
             const sYear = parseInt(tYear); 
-            const sMonth = tMonth;
+            const sMonth = parseInt(tMonth);
 
-            // Filtro polizze scadute nel mese/anno sorgente
             const policiesToRenew = policies.filter(p => {
                 if(p.status !== 'ATTIVA') return false;
+                if(!p.expiry) return false;
                 const d = new Date(p.expiry);
-                // Javascript months 0-11
-                return d.getFullYear() === sYear && (d.getMonth() + 1) === parseInt(sMonth);
+                return d.getFullYear() === sYear && (d.getMonth() + 1) === sMonth;
             });
 
-            if(policiesToRenew.length === 0) return alert(`Nessuna polizza in scadenza trovata nel periodo di riferimento (${sMonth}/${sYear})`);
+            if(policiesToRenew.length === 0) return alert(`Nessuna polizza in scadenza trovata nel periodo di riferimento (${tMonth}/${sYear})`);
 
             let created = 0;
             policiesToRenew.forEach(oldP => {
-                // Controllo se esiste già un rinnovo (stesso cliente, compagnia, data effetto = vecchia scadenza)
-                const alreadyExists = policies.some(newP => 
-                    newP.clientId === oldP.clientId && 
-                    newP.company === oldP.company && 
-                    newP.effect === oldP.expiry 
-                );
+                let count = (oldP.split === 1 ? 1 : (oldP.split === 0 ? 1 : oldP.split));
+                let newTitles = [];
+                let fallbackNeeded = true;
 
-                if(!alreadyExists) {
-                    const newEff = new Date(oldP.expiry);
-                    const newExp = new Date(oldP.expiry);
-                    newExp.setFullYear(newExp.getFullYear() + 1);
-
-                    let titles = [];
-                    let count = (oldP.split === 1 ? 1 : (oldP.split === 0 ? 1 : oldP.split));
+                // Nuova logica: basi le date ESATTAMENTE su quelle dell'anno precedente!
+                if (oldP.titles && oldP.titles.length > 0) {
+                    let sortedTitles = [...oldP.titles].sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+                    let lastCycle = sortedTitles.slice(-count);
                     
-                    // Genero titoli con IMPORTO ZERO
+                    if (lastCycle.length === count) {
+                        fallbackNeeded = false;
+                        for (let i = 0; i < count; i++) {
+                            let oldD = new Date(lastCycle[i].dueDate);
+                            let dd = new Date(oldD);
+                            dd.setFullYear(dd.getFullYear() + 1); // Aggiunge esattamente 1 anno
+                            
+                            newTitles.push({
+                                id: Date.now() + Math.floor(Math.random()*1000000) + i,
+                                n: 0,
+                                dueDate: toISODateLocal(dd),
+                                amount: 0, 
+                                status: 'DA INCASSARE',
+                                commTotal: 0,
+                                commPers: 0,
+                                isRenewal: true
+                            });
+                        }
+                    }
+                }
+
+                // Fallback alla vecchia logica solo in assenza di un ciclo precedente valido
+                if (fallbackNeeded) {
+                    const newEff = new Date(oldP.expiry);
                     for(let i=0; i<count; i++){
                         let dd = new Date(newEff);
                         if(oldP.split===2) dd.setMonth(newEff.getMonth()+(i*6));
@@ -3045,93 +3125,138 @@ if(editingPolicyId){const idx=policies.findIndex(p=>p.id===editingPolicyId); pol
                         else if(oldP.split===4) dd.setMonth(newEff.getMonth()+(i*3));
                         else if(oldP.split===12) dd.setMonth(newEff.getMonth()+i);
 
-                        titles.push({
-                            id: Date.now() + Math.floor(Math.random()*1000000),
-                            n: i+1,
+                        newTitles.push({
+                            id: Date.now() + Math.floor(Math.random()*1000000) + i,
+                            n: 0,
                             dueDate: toISODateLocal(dd),
-                            amount: 0, // IMPORTO ZERO
+                            amount: 0, 
                             status: 'DA INCASSARE',
                             commTotal: 0,
                             commPers: 0,
-                            isRenewal: true //
+                            isRenewal: true
                         });
                     }
+                }
 
-                    const newP = {
-                        id: Date.now() + Math.floor(Math.random()*1000000),
-                        clientId: oldP.clientId,
-                        ramo: oldP.ramo,
-                        company: oldP.company,
-                        notes: "Rinnovo automatico da " + (oldP.policyNumber || ''),
-                        policyNumber: oldP.policyNumber, 
-                        effect: newEff.toISOString().split('T')[0],
-                        expiry: newExp.toISOString().split('T')[0],
-                        split: oldP.split,
-                        annualPremium: 0, 
-                        commPerc: oldP.commPerc,
-                        status: 'ATTIVA',
-                        titles: titles
-                    };
-                    policies.push(newP);
+                const effIso = newTitles[0].dueDate;
+                const alreadyExists = (oldP.titles || []).some(t => t.dueDate === effIso);
+
+                if(!alreadyExists) {
+                    oldP.titles = (oldP.titles || []).concat(newTitles);
+                    oldP.titles.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+                    oldP.titles.forEach((t, idx) => {
+                        if (/^\d+$/.test(String(t.n)) || t.n === 0 || t.n === undefined) {
+                            t.n = idx + 1;
+                        }
+                    });
+                    
+                    let maxNewD = Math.max(...newTitles.map(t => new Date(t.dueDate).getTime()));
+                    oldP.expiry = new Date(maxNewD).toISOString().split('T')[0];
+
+                    if (typeof fbSaveSingleDoc === 'function') fbSaveSingleDoc('policies', oldP);
                     created++;
                 }
             });
 
-            saveAllData();
-            alert(`Generati ${created} rinnovi per ${tMonth}/${tYear}.`);
-            renderDeadlines(); // Aggiorna tabella scadenze
+            if(created > 0) saveAllData();
+            alert(`Generati ${created} rinnovi per ${tMonth}/${sYear}.`);
+            renderDeadlines(); 
         }
 
-        // FUNZIONE RINNOVO SINGOLO
+        // FUNZIONE RINNOVO SINGOLO - CORRETTA CON DATE ESATTE
         function renewPolicy(id) {
             const p = policies.find(x => x.id === id);
             if(!p) return;
             if(!confirm("Creare i titoli di rinnovo per la polizza " + (p.policyNumber || '') + "?\nImporti e provvigioni verranno azzerati e potranno essere inseriti con la matita.")) return;
 
-            const newEff = new Date(p.expiry);
-            const newExp = new Date(p.expiry);
-            newExp.setFullYear(newExp.getFullYear() + 1);
-
-            const effIso = newEff.toISOString().split('T')[0];
-            const already = (p.titles || []).some(t => (t.isRenewal === true) && t.dueDate >= effIso);
-            if(already) return alert('Rinnovo già presente (titoli già creati).');
-
-            let titles = [];
             let count = (p.split === 1 ? 1 : (p.split === 0 ? 1 : p.split));
-            for(let i=0; i<count; i++){
-                let dd = new Date(newEff);
-                if(p.split===2) dd.setMonth(newEff.getMonth()+(i*6));
-                else if(p.split===3) dd.setMonth(newEff.getMonth()+(i*4));
-                else if(p.split===4) dd.setMonth(newEff.getMonth()+(i*3));
-                else if(p.split===12) dd.setMonth(newEff.getMonth()+i);
-
-                titles.push({
-                    id: Date.now() + Math.floor(Math.random()*1000000),
-                    n: 0,
-                    dueDate: toISODateLocal(dd),
-                    amount: 0,
-                    status: 'DA INCASSARE',
-                    commTotal: 0,
-                    commPers: 0,
-                    isRenewal: true
-                });
+            let newTitles = [];
+            let fallbackNeeded = true;
+            
+            // Nuova logica: basiamoci sulle date degli ultimi titoli inseriti per non sballare scadenze
+            if (p.titles && p.titles.length > 0) {
+                let sortedTitles = [...p.titles].sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+                let lastCycle = sortedTitles.slice(-count);
+                
+                if (lastCycle.length === count) {
+                    fallbackNeeded = false;
+                    for(let i=0; i<count; i++){
+                        let oldD = new Date(lastCycle[i].dueDate);
+                        let dd = new Date(oldD);
+                        dd.setFullYear(dd.getFullYear() + 1); // + 1 anno esatto!
+                        
+                        newTitles.push({
+                            id: Date.now() + Math.floor(Math.random()*1000000) + i,
+                            n: 0,
+                            dueDate: toISODateLocal(dd),
+                            amount: 0,
+                            status: 'DA INCASSARE',
+                            commTotal: 0,
+                            commPers: 0,
+                            isRenewal: true
+                        });
+                    }
+                }
             }
 
-            p.titles = (p.titles || []).concat(titles);
-            p.titles.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
-            p.titles.forEach((t, idx) => { t.n = idx + 1; });
-            p.expiry = newExp.toISOString().split('T')[0];
+            if (fallbackNeeded) {
+                let nextEff = new Date(p.effect);
+                if (p.titles && p.titles.length > 0) {
+                    const maxD = Math.max(...p.titles.map(t => new Date(t.dueDate).getTime()));
+                    const maxTitleDate = new Date(maxD);
+                    while (nextEff <= maxTitleDate) {
+                        nextEff.setFullYear(nextEff.getFullYear() + 1);
+                    }
+                }
+                const newEff = new Date(nextEff);
+                for(let i=0; i<count; i++){
+                    let dd = new Date(newEff);
+                    if(p.split===2) dd.setMonth(newEff.getMonth()+(i*6));
+                    else if(p.split===3) dd.setMonth(newEff.getMonth()+(i*4));
+                    else if(p.split===4) dd.setMonth(newEff.getMonth()+(i*3));
+                    else if(p.split===12) dd.setMonth(newEff.getMonth()+i);
 
+                    newTitles.push({
+                        id: Date.now() + Math.floor(Math.random()*1000000) + i,
+                        n: 0,
+                        dueDate: toISODateLocal(dd),
+                        amount: 0,
+                        status: 'DA INCASSARE',
+                        commTotal: 0,
+                        commPers: 0,
+                        isRenewal: true
+                    });
+                }
+            }
+
+            const effIso = newTitles[0].dueDate;
+            const already = (p.titles || []).some(t => (t.isRenewal === true) && t.dueDate === effIso);
+            if(already) return alert('Rinnovo già presente (titoli già creati per questa data).');
+
+            p.titles = (p.titles || []).concat(newTitles);
+            p.titles.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate));
+            p.titles.forEach((t, idx) => { 
+                if (/^\d+$/.test(String(t.n)) || t.n === 0 || t.n === undefined) {
+                    t.n = idx + 1; 
+                }
+            });
+
+            let maxNewD = Math.max(...newTitles.map(t => new Date(t.dueDate).getTime()));
+            p.expiry = new Date(maxNewD).toISOString().split('T')[0];
+
+            if (typeof fbSaveSingleDoc === 'function') fbSaveSingleDoc('policies', p);
+            if (typeof saveLocalBackup === 'function') saveLocalBackup();
+            
             consolidateDuplicatePolicies();
             saveAllData();
 
             renderDeadlines();
             renderPolicies(currentActiveClientId, true);
             updateDashboard();
-            alert('Rinnovo creato: ' + titles.length + ' titoli aggiunti alla polizza.');
+            alert('Rinnovo creato: ' + newTitles.length + ' titoli aggiunti alla polizza.');
         }
 
-        // RENDER POLIZZE - CORRETTO PER SOSPENSIONE
+        // RENDER POLIZZE - CORRETTO PER SOSPENSIONE E RICHIESTA SOSPENSIONE
         function renderPolicies(filteredList = null, showMonthOnly = true) {
             let list = (policies || []);
             if(Array.isArray(filteredList)) {
@@ -3167,23 +3292,41 @@ if(editingPolicyId){const idx=policies.findIndex(p=>p.id===editingPolicyId); pol
                 let rc=''; if(p.ramo==='AUTO')rc='branch-auto'; else if(p.ramo==='VITA')rc='branch-vita'; else rc='branch-vari'; 
                 
                 let displayStatus = p.status;
-                if (p.suspensionStart && p.suspensionEnd) {
-                    if (todayStr >= p.suspensionStart && todayStr <= p.suspensionEnd) {
+                
+                // --- LOGICA SOSPENSIONE DINAMICA ---
+                if (p.suspensionStart && p.suspensionEnd && p.status === 'ATTIVA') {
+                    if (todayStr < p.suspensionStart) {
+                        displayStatus = 'RICHIESTA SOSPENSIONE';
+                    } else if (todayStr >= p.suspensionStart && todayStr <= p.suspensionEnd) {
                         displayStatus = 'SOSPESA';
                     } else {
-                        if(displayStatus === 'ATTIVA' || displayStatus === 'SOSPESA') displayStatus = 'ATTIVA';
+                        displayStatus = 'ATTIVA';
                     }
                 }
                 
+                // Creazione del Badge Colorato
                 let sb=`<span class="bg-slate-800 text-xs px-2 py-1 rounded text-white border border-slate-600">${displayStatus}</span>`; 
-                if(displayStatus==='ANNULLATA')sb=`<span class="bg-red-900/30 text-xs px-2 py-1 rounded text-red-500 border border-red-900">ANNULLATA</span>`; 
-                if(displayStatus==='SOSTITUITA')sb=`<span class="bg-yellow-900/30 text-xs px-2 py-1 rounded text-yellow-500 border border-yellow-900">SOSTITUITA</span>`; 
-                if(displayStatus==='SOSPESA')sb=`<span class="bg-purple-900/30 text-xs px-2 py-1 rounded text-purple-500 border border-purple-900">SOSPESA</span>`; 
+                if(displayStatus==='ANNULLATA') sb=`<span class="bg-red-900/30 text-xs px-2 py-1 rounded text-red-500 border border-red-900">ANNULLATA</span>`; 
+                else if(displayStatus==='SOSTITUITA') sb=`<span class="bg-yellow-900/30 text-xs px-2 py-1 rounded text-yellow-500 border border-yellow-900">SOSTITUITA</span>`; 
+                else if(displayStatus==='SOSPESA') sb=`<span class="bg-purple-900/30 text-xs px-2 py-1 rounded text-purple-500 border border-purple-900">SOSPESA</span>`; 
+                else if(displayStatus==='RICHIESTA SOSPENSIONE') sb=`<span class="bg-blue-900/30 text-xs px-2 py-1 rounded text-blue-400 border border-blue-900 whitespace-nowrap">RICHIESTA SOSP.</span>`; 
                 
                 let btnRenew = ''; 
-                if(p.status === 'ATTIVA' || displayStatus === 'SOSPESA') { btnRenew = `<button onclick="renewPolicy(${p.id})" class="text-xs border border-accent text-accent hover:bg-slate-800 px-2 py-1 rounded" title="Genera Rinnovo Annuale"><i class="fa-solid fa-calendar-plus"></i></button>`; }
+                if(p.status === 'ATTIVA' || displayStatus === 'SOSPESA' || displayStatus === 'RICHIESTA SOSPENSIONE') { 
+                    btnRenew = `<button onclick="renewPolicy(${p.id})" class="text-xs border border-accent text-accent hover:bg-slate-800 px-2 py-1 rounded" title="Genera Rinnovo Annuale"><i class="fa-solid fa-calendar-plus"></i></button>`; 
+                }
                 
-                const row=`<tr class="hover:bg-slate-800/30 border-b border-slate-800/50 last:border-0 ${rc} ${displayStatus!=='ATTIVA' && displayStatus!=='SOSPESA'?'opacity-60':''}"><td class="px-6 py-4">${sb}</td><td class="px-6 py-4 text-white font-medium">${c}</td><td class="px-6 py-4"><div class="text-sm font-bold text-white">${p.company}</div><div class="text-xs text-slate-400 mt-1">${p.policyNumber||''}</div><div class="text-[10px] uppercase border border-slate-700 rounded px-1 w-fit mt-1">${p.ramo}</div></td><td class="px-6 py-4 font-mono text-xs text-slate-300">${new Date(p.expiry).toLocaleDateString('it-IT')}</td><td class="px-6 py-4 text-right font-mono text-white">€ ${p.annualPremium.toFixed(2)}</td><td class="px-6 py-4 text-center space-x-1">${btnRenew}<button onclick="openClaimModal(${p.id}, null)" class="text-xs border border-slate-700 text-warning hover:bg-slate-800 px-2 py-1 rounded" title="Apri sinistro"><i class="fa-solid fa-triangle-exclamation"></i></button><button onclick="openPolicyTitles(${p.id})" class="text-xs border border-slate-700 text-info hover:bg-slate-800 px-2 py-1 rounded"><i class="fa-solid fa-list-ol"></i></button><button onclick="openPolicyModal(null, ${p.id})" class="text-xs border border-slate-700 text-slate-300 hover:bg-slate-800 px-2 py-1 rounded"><i class="fa-solid fa-pen"></i></button><button onclick="suspendPolicy(${p.id})" class="text-xs border border-slate-700 text-purple-400 hover:bg-slate-800 px-2 py-1 rounded" title="Sospendi"><i class="fa-solid fa-pause"></i></button><button onclick="cancelPolicy(${p.id})" class="text-xs border border-slate-700 text-red-400 hover:bg-slate-800 px-2 py-1 rounded"><i class="fa-solid fa-ban"></i></button><button onclick="replacePolicy(${p.id})" class="text-xs border border-slate-700 text-blue-400 hover:bg-slate-800 px-2 py-1 rounded"><i class="fa-solid fa-right-left"></i></button><button onclick="deletePolicy(${p.id})" class="text-xs border border-slate-700 text-slate-500 hover:text-red-600 px-2 py-1 rounded"><i class="fa-solid fa-trash"></i></button></td></tr>`; 
+                const row=`<tr class="hover:bg-slate-800/30 border-b border-slate-800/50 last:border-0 ${rc} ${displayStatus!=='ATTIVA' && displayStatus!=='SOSPESA' && displayStatus!=='RICHIESTA SOSPENSIONE'?'opacity-60':''}"><td class="px-6 py-4">${sb}</td><td class="px-6 py-4 text-white font-medium">${c}</td><td class="px-6 py-4"><div class="text-sm font-bold text-white">${p.company}</div><div class="text-xs text-slate-400 mt-1">${p.policyNumber||''}</div><div class="text-[10px] uppercase border border-slate-700 rounded px-1 w-fit mt-1">${p.ramo}</div></td><td class="px-6 py-4 font-mono text-xs text-slate-300">${new Date(p.expiry).toLocaleDateString('it-IT')}</td><td class="px-6 py-4 text-right font-mono text-white">€ ${p.annualPremium.toFixed(2)}</td><td class="px-6 py-4 text-center space-x-1">
+                    ${btnRenew}
+                    <button onclick="openClaimModal(${p.id}, null)" class="text-xs border border-slate-700 text-warning hover:bg-slate-800 px-2 py-1 rounded" title="Apri sinistro"><i class="fa-solid fa-triangle-exclamation"></i></button>
+                    <button onclick="openPolicyTitles(${p.id})" class="text-xs border border-slate-700 text-info hover:bg-slate-800 px-2 py-1 rounded" title="Rate e Provvigioni"><i class="fa-solid fa-list-ol"></i></button>
+                    <button onclick="openPolicyModal(null, ${p.id})" class="text-xs border border-slate-700 text-slate-300 hover:bg-slate-800 px-2 py-1 rounded" title="Modifica Polizza"><i class="fa-solid fa-pen"></i></button>
+                    <button onclick="suspendPolicy(${p.id})" class="text-xs border border-slate-700 text-purple-400 hover:bg-slate-800 px-2 py-1 rounded" title="Sospendi"><i class="fa-solid fa-pause"></i></button>
+                    <button onclick="reactivatePolicy(${p.id})" class="text-xs border border-slate-700 text-emerald-400 hover:bg-slate-800 px-2 py-1 rounded" title="Riattiva Anticipatamente"><i class="fa-solid fa-play"></i></button>
+                    <button onclick="cancelPolicy(${p.id})" class="text-xs border border-slate-700 text-red-400 hover:bg-slate-800 px-2 py-1 rounded" title="Annulla"><i class="fa-solid fa-ban"></i></button>
+                    <button onclick="replacePolicy(${p.id})" class="text-xs border border-slate-700 text-blue-400 hover:bg-slate-800 px-2 py-1 rounded" title="Sostituisci"><i class="fa-solid fa-right-left"></i></button>
+                    <button onclick="deletePolicy(${p.id})" class="text-xs border border-slate-700 text-slate-500 hover:text-red-600 px-2 py-1 rounded" title="Elimina"><i class="fa-solid fa-trash"></i></button>
+                </td></tr>`; 
                 
                 htmlBuffer += row; 
             }); 
@@ -3329,7 +3472,9 @@ function deletePolicy(id){
             updateDashboard();
         }
 
-        function suspendPolicy(id) {
+      
+
+            function suspendPolicy(id) {
             const p = policies.find(x => x.id === id);
             if (!p || (p.status !== 'ATTIVA' && p.status !== 'SOSPESA')) return; 
 
@@ -3365,7 +3510,7 @@ function deletePolicy(id){
 
             // Sposto rate future
             const sIso = d1.toISOString().split('T')[0];
-            p.titles.forEach(t => {
+            (p.titles || []).forEach(t => {
                 if(t.status === 'DA INCASSARE' && t.dueDate > sIso) {
                     let d = new Date(t.dueDate);
                     d.setDate(d.getDate() + days);
@@ -3373,7 +3518,71 @@ function deletePolicy(id){
                 }
             });
 
-            p.status = 'ATTIVA'; // Salvo sempre come attiva, la visualizzazione è dinamica
+            // Manteniamo la polizza ATTIVA nel database. L'interfaccia farà il resto.
+            p.status = 'ATTIVA'; 
+            
+            // --- SALVATAGGIO GRANULARE ---
+            if (typeof fbSaveSingleDoc === 'function') {
+                fbSaveSingleDoc('policies', p);
+            }
+            if (typeof saveLocalBackup === 'function') {
+                saveLocalBackup();
+            }
+            
+            saveAllData();
+            renderPolicies();
+        }
+
+        function reactivatePolicy(id) {
+            const p = policies.find(x => x.id === id);
+            if (!p || (!p.suspensionStart || !p.suspensionEnd)) return alert("La polizza non risulta in stato di sospensione o mancano i dati.");
+
+            const parseIt = (s) => {
+                if(!s) return null;
+                const parts = s.split('/');
+                if(parts.length !== 3) return null;
+                return new Date(`${parts[2]}-${parts[1]}-${parts[0]}`); 
+            };
+
+            const reactStr = prompt("Data Riattivazione Effettiva (GG/MM/AAAA):");
+            if (!reactStr) return;
+            const dReact = parseIt(reactStr);
+            if(!dReact || isNaN(dReact)) return alert("Formato data non valido (usa GG/MM/AAAA)");
+
+            const dStart = new Date(p.suspensionStart);
+            const dEndOld = new Date(p.suspensionEnd);
+
+            if(dReact <= dStart) return alert("La data di riattivazione deve essere successiva alla data di inizio sospensione.");
+
+            // Calcoliamo la differenza di giorni tra la fine prevista e la riattivazione effettiva
+            const originalDays = Math.ceil((dEndOld - dStart) / (1000 * 60 * 60 * 24));
+            const actualDays = Math.ceil((dReact - dStart) / (1000 * 60 * 60 * 24));
+            const daysDiff = originalDays - actualDays; 
+
+            if (daysDiff !== 0) {
+                // Rettifichiamo la scadenza della polizza
+                let newExp = new Date(p.expiry);
+                newExp.setDate(newExp.getDate() - daysDiff);
+                p.expiry = newExp.toISOString().split('T')[0];
+
+                // Rettifichiamo le date delle rate future
+                const sIso = dStart.toISOString().split('T')[0];
+                (p.titles || []).forEach(t => {
+                    if(t.status === 'DA INCASSARE' && t.dueDate > sIso) {
+                        let d = new Date(t.dueDate);
+                        d.setDate(d.getDate() - daysDiff);
+                        t.dueDate = d.toISOString().split('T')[0];
+                    }
+                });
+            }
+
+            // Ripristiniamo la polizza
+            delete p.suspensionStart;
+            delete p.suspensionEnd;
+            p.status = 'ATTIVA';
+
+            if (typeof fbSaveSingleDoc === 'function') fbSaveSingleDoc('policies', p);
+            if (typeof saveLocalBackup === 'function') saveLocalBackup();
             
             saveAllData();
             renderPolicies();
@@ -3809,31 +4018,33 @@ function getFilteredDeadlines() {
                 const t = (pol.titles || []).find(x => String(x.id) === titleId);
                 if (!t) return alert('Titolo non trovato.');
 
-                // --- INIZIO MODIFICA: Incasso automatico 12 rate SDD con rispettiva data scadenza ---
-                if (method === 'SDD' && Number(pol.split) === 12) {
-                    // Estrae l'anno (AAAA) dalla rata che stai attualmente incassando
-                    const targetYear = t.dueDate ? String(t.dueDate).substring(0, 4) : null;
+                // --- INIZIO MODIFICA: Incasso automatico 12 rate SDD in base all'ANNO ASSICURATIVO ---
+if (method === 'SDD' && Number(pol.split) === 12) {
+    // Calcola il ciclo dell'anno assicurativo (es. 0 per rate 1-12, 1 per rate 13-24, ecc.)
+    const targetCycle = Math.floor((Number(t.n) - 1) / 12);
 
-                    (pol.titles || []).forEach(tt => {
-                        // Verifica che la rata abbia una scadenza e faccia parte dello stesso anno di competenza
-                        if (targetYear && tt.dueDate && String(tt.dueDate).substring(0, 4) === targetYear) {
-                            tt.status = 'INCASSATO';
-                            tt.paymentMethod = 'SDD';
-                            // Imposta in automatico come data incasso la data di scadenza della singola rata
-                            tt.paymentDate = String(tt.dueDate);
-                        }
-                    });
+    (pol.titles || []).forEach(tt => {
+        const ttCycle = Math.floor((Number(tt.n) - 1) / 12);
+        
+        // Verifica che la rata faccia parte dello stesso anno assicurativo
+        if (!isNaN(targetCycle) && ttCycle === targetCycle) {
+            tt.status = 'INCASSATO';
+            tt.paymentMethod = 'SDD';
+            // Imposta in automatico come data incasso la data di scadenza della singola rata
+            tt.paymentDate = String(tt.dueDate);
+        }
+    });
 
-                    fbSaveSingleDoc('policies', pol);
-                    saveLocalBackup();
+    fbSaveSingleDoc('policies', pol);
+    saveLocalBackup();
 
-                    closePaymentModal();
-                    renderDeadlines();
-                    updateDashboard();
-                    if (currentViewingPolicyId == pol.id) openPolicyTitles(pol.id);
-                    return;
-                }
-                // --- FINE MODIFICA ---
+    closePaymentModal();
+    renderDeadlines();
+    updateDashboard();
+    if (currentViewingPolicyId == pol.id) openPolicyTitles(pol.id);
+    return;
+}
+// --- FINE MODIFICA ---
 
                 t.status = 'INCASSATO';
                 t.paymentMethod = method;
@@ -4639,9 +4850,22 @@ function switchSection(sectionName){
   } else if(sectionName === 'deadlines'){
     document.getElementById('section-deadlines')?.classList.remove('hidden');
     document.getElementById('nav-deadlines')?.classList.add('nav-active');
+    
+    // Imposta automaticamente il mese e anno corrente all'ingresso
     const fMoD = document.getElementById('filterMonthDeadlines');
-    if(fMoD && !fMoD.value){ fMoD.value = ""; }
+    if(fMoD){ 
+        const now = new Date(); 
+        fMoD.value = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2,'0')}`; 
+    }
+
+    // Imposta automaticamente "Solo prima rata" come filtro di default
+    const fMonthly = document.getElementById('filterMonthlyDeadlines');
+    if(fMonthly){ 
+        fMonthly.value = 'ANNUAL_ONLY'; 
+    }
+
     renderDeadlines();
+  }
   } else if(sectionName === 'report'){
     document.getElementById('section-report')?.classList.remove('hidden');
     document.getElementById('nav-report')?.classList.add('nav-active');
